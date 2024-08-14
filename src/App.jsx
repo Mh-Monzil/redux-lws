@@ -2,6 +2,7 @@ import Counter from "./components/Counter";
 import TotalValue from "./components/TotalValue";
 import { useDispatch, useSelector } from "react-redux";
 import { decrement, increment } from "./features/counters/countersSlice";
+import Posts from "./components/Posts";
 
 function App() {
   // const initialCounters = [
@@ -31,7 +32,7 @@ function App() {
   };
 
   return (
-    <div className="bg-black h-screen p-10 space-y-5">
+    <div className="bg-black text-white p-10 space-y-5">
       {counters.map((counter) => (
         <Counter
           key={counter.id}
@@ -41,6 +42,8 @@ function App() {
         />
       ))}
       <TotalValue totalCount={totalCount} />
+
+      <Posts />
     </div>
   );
 }
